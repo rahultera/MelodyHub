@@ -37,19 +37,29 @@ export async function login(req, res) {
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
+
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
+
     const payload = { userId: user.id };
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "15m" });
-    res.cookie("token", token, { httpOnly: true, maxAge: 15 * 60 * 1000 });
+
+    res.cookie("token", token, { 
+      httpOnly: true, 
+      secure: true,          
+      sameSite: 'none',       
+      maxAge: 15 * 60 * 1000 
+    });
+
     const userData = { id: user.id, email: user.email, name: user.name };
     res.json(userData);
   } catch (error) {
     res.status(500).json({ error: "Login failed" });
   }
 }
+
 
 export function logout(req, res) {
   res.clearCookie("token");
