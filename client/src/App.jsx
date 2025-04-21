@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/user/name", { withCredentials: true })
+      .get("https://melodyhub-icod.onrender.com/api/user/name", { withCredentials: true })
       .then((res) => {
         setUser({ id: res.data.id, name: res.data.name });
       })
