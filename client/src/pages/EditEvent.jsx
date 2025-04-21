@@ -23,7 +23,7 @@ const EditEvent = () => {
 
   const fetchEvent = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/Events/${id}`);
+      const response = await axios.get(`https://melodyhub-icod.onrender.com/Events/${id}`);
       const event = response.data;
 
       setEventData({
@@ -51,7 +51,7 @@ const EditEvent = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:8000/Events/${id}`,
+        `https://melodyhub-icod.onrender.com/Events/${id}`,
         {
           ...eventData,
           date: new Date(eventData.date), 
