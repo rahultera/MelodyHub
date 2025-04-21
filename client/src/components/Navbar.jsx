@@ -36,7 +36,7 @@ const Navbar = ({ user, onLogout }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:8000/logout', {}, { withCredentials: true });
+      await axios.post('https://melodyhub-icod.onrender.com/logout', {}, { withCredentials: true });
       onLogout();
       navigate('/');
     } catch (err) {
