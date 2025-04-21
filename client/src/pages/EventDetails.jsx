@@ -64,7 +64,7 @@ const EventDetails = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/Events/${id}/comments`,
+        `https://melodyhub-icod.onrender.com/Events/${id}/comments`,
         { text: comment },
         { withCredentials: true }
       );
