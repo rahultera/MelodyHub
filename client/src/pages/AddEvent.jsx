@@ -15,7 +15,7 @@ const AddEvent = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8000/Add-Event",
+        "https://melodyhub-icod.onrender.com/Add-Event",
         { title, description, date, location, artist },
         { withCredentials: true }
       );
