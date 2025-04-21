@@ -25,7 +25,7 @@ import { requireAuth } from "./middleware/requireAuth.js";
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://melody-hub-wheat-two.vercel.app'],
+  origin: ['https://melody-hub-wheat-two.vercel.app'],
   credentials: true
 }));
 
