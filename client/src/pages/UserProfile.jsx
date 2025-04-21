@@ -10,7 +10,7 @@ const UserProfile = ({ user }) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/user/comments', { withCredentials: true })
+      .get('https://melodyhub-icod.onrender.com/user/comments', { withCredentials: true })
       .then((res) => {
         setComments(res.data);
       })
@@ -20,7 +20,7 @@ const UserProfile = ({ user }) => {
       });
 
     axios
-      .get('http://localhost:8000/user/bookmarks', { withCredentials: true })
+      .get('https://melodyhub-icod.onrender.com/user/bookmarks', { withCredentials: true })
       .then((res) => {
         setBookmarks(res.data);
       })
