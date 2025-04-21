@@ -32,7 +32,7 @@ const EventDetails = () => {
 
   const fetchCurrentUser = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/me', { withCredentials: true });
+      const res = await axios.get('https://melodyhub-icod.onrender.com/me', { withCredentials: true });
       setCurrentUser(res.data);
     } catch (error) {
       console.error('Error fetching user info:', error);
@@ -41,7 +41,7 @@ const EventDetails = () => {
 
   const checkBookmark = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/user/bookmarks', { withCredentials: true });
+      const response = await axios.get('https://melodyhub-icod.onrender.com/user/bookmarks', { withCredentials: true });
       const bookmarked = response.data.some((bookmark) => bookmark.event.id === parseInt(id));
       setIsBookmarked(bookmarked);
     } catch (error) {
@@ -51,7 +51,7 @@ const EventDetails = () => {
 
   const handleBookmark = async () => {
     try {
-      await axios.post(`http://localhost:8000/Events/${id}/bookmark`, {}, { withCredentials: true });
+      await axios.post(`https://melodyhub-icod.onrender.com/Events/${id}/bookmark`, {}, { withCredentials: true });
       setIsBookmarked(!isBookmarked);
     } catch (error) {
       console.error('Error bookmarking event:', error);
@@ -84,8 +84,8 @@ const EventDetails = () => {
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this event?')) {
       try {
-        await axios.delete(`http://localhost:8000/Events/${id}/bookmarks`, { withCredentials: true });
-        await axios.delete(`http://localhost:8000/Events/${id}`, { withCredentials: true });
+        await axios.delete(`https://melodyhub-icod.onrender.com/Events/${id}/bookmarks`, { withCredentials: true });
+        await axios.delete(`https://melodyhub-icod.onrender.com/Events/${id}`, { withCredentials: true });
   
         alert('Event deleted successfully.');
         navigate('/items');
