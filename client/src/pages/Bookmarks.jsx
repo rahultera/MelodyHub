@@ -9,7 +9,7 @@ const Bookmarks = ({ user }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/user/bookmarks", { withCredentials: true })
+      .get("https://melodyhub-icod.onrender.com/user/bookmarks", { withCredentials: true })
       .then((res) => {
         setBookmarks(res.data);
       })
