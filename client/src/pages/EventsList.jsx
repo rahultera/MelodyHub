@@ -9,7 +9,7 @@ const EventsList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/Events", { withCredentials: true })
+      .get("https://melodyhub-icod.onrender.com/Events", { withCredentials: true })
       .then((res) => setTodos(res.data))
       .catch((err) => console.error(err));
   }, []);
