@@ -20,7 +20,7 @@ const EventDetails = () => {
 
   const fetchEventDetails = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/Events/${id}`);
+      const res = await axios.get(`https://melodyhub-icod.onrender.com/Events/${id}`);
       setEvent(res.data);
       setComments(res.data.Comment || []);
       checkBookmark();
