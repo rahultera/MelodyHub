@@ -79,7 +79,7 @@ describe('Login Page', () => {
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(
-        'http://localhost:8000/login',
+        'https://melodyhub-icod.onrender.com/login',
         { email: 'test@example.com', password: 'password123' },
         { withCredentials: true }
       );
