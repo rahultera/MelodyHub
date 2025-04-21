@@ -12,7 +12,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/login",
+        "https://melodyhub-icod.onrender.com/login",
         { email, password },
         { withCredentials: true }
       );
