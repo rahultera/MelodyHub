@@ -1,0 +1,161 @@
+.EventDetailsPage {
+  background-image: url('https://media.istockphoto.com/id/1129490620/photo/midsection-of-man-playing-a-guitar-black-and-white.jpg?s=612x612&w=0&k=20&c=drAnV8mj3LhV8wWOPjIGsA7BAYsb-GcoZV2AVXswQmw=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+}
+
+.Doverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 1;
+}
+
+.DformContainer {
+  position: relative;
+  background: rgba(20, 20, 20, 0.85);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  z-index: 2;
+  width: 420px;
+  max-width: 90%;
+  color: #e0e0e0;
+  backdrop-filter: blur(6px);
+}
+
+p {
+  font-size: 1rem;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.commentSection {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.commentSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1db954;
+}
+
+.commentsContainer {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 15px;
+}
+
+.comment {
+  background: rgba(40, 40, 40, 0.9);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.button,
+.bookmarkButton,
+.editButton,
+.deleteButton {
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button {
+  background: #1db954;
+  color: #fff;
+}
+
+.button:hover {
+  background: #17a443;
+}
+
+.bookmarkButton {
+  background: #fdd835;
+  color: #333;
+}
+
+.bookmarkButton:hover {
+  background: #ffc107;
+}
+
+.editButton {
+  background: #3498db;
+  color: #fff;
+}
+
+.editButton:hover {
+  background: #2980b9;
+}
+
+.deleteButton {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.deleteButton:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .DformContainer {
+    width: 95%;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .DformContainer {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .button,
+  .bookmarkButton,
+  .editButton,
+  .deleteButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

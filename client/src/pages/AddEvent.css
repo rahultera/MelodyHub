@@ -1,0 +1,78 @@
+.AddEventPage {
+  background-image: url("https://wallpapercave.com/wp/wp2326987.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 70px);
+  padding-top: 70px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+  
+  .Aoverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .AformContainer {
+    position: relative;
+    background: rgba(110, 107, 107, 0.11);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 2;
+    width: 300px;
+    color: #fff;
+  }
+  
+  .input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    background-color: #fdd835;
+    color: #333;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #ffc107;
+  }
+  
+  @media (max-width: 768px) {
+    .formContainer {
+      width: 90%;
+      padding: 20px;
+    }
+    .input {
+      padding: 8px;
+    }
+    .button {
+      padding: 8px;
+    }
+  }
+  

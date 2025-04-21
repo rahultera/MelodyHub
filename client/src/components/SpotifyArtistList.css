@@ -1,0 +1,135 @@
+.artist-container {
+    padding: 2rem;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .artist-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1DB954;
+    text-align: center;
+  }
+  
+  .artist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .artist-card {
+    background-color: #111;
+    padding: 1.2rem;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .artist-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .artist-name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .artist-genres {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.3rem;
+  }
+  
+  .artist-popularity {
+    font-size: 0.85rem;
+    color: #1DB954;
+    margin-bottom: 0.5rem;
+  }
+  
+  .artist-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #1DB954;
+    text-decoration: none;
+  }
+  
+  .artist-message {
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    padding-top: 4rem;
+  }
+  
+  /* Keep layout consistent with laptop view */
+  @media (max-width: 768px) {
+    .artist-card {
+      width: 100%;
+      max-width: 95%;
+    }
+  
+    .artist-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  /* Mobile responsiveness */
+@media (max-width: 480px) {
+    .artist-container {
+      padding: 1rem;
+    }
+  
+    .artist-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .artist-grid {
+      gap: 1rem;
+    }
+  
+    .artist-card {
+      width: 100%;
+      max-width: 90%;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+  
+    .artist-card img {
+      margin-bottom: 0.8rem;
+    }
+  
+    .artist-name {
+      font-size: 1.1rem;
+    }
+  
+    .artist-genres {
+      font-size: 0.8rem;
+    }
+  
+    .artist-popularity {
+      font-size: 0.75rem;
+    }
+  
+    .artist-link {
+      font-size: 0.8rem;
+    }
+  
+    .artist-message {
+      font-size: 1rem;
+      padding-top: 3rem;
+    }
+  }
+  
+  
