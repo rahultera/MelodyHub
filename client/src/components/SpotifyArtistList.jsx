@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './SpotifyArtistList.css';
+
+// Top Spotify Artist IDs
 const TOP_ARTIST_IDS = [
-  "5FlDRCUWkwAXFZ6ynO0U2P", 
-  "1Xyo4u8uXC1ZmMpatF05PJ", 
-  "6eUKZXaKkcviH0Ku9w2n3V", 
-  "3TVXtAsR1Inumwj472S9r4", 
-  "66CXWjxzNUsdJxJ2JdwvnR", 
-  "1uNFoZAHBGtllmzznpCI3s", 
+  "5FlDRCUWkwAXFZ6ynO0U2P",
+  "1Xyo4u8uXC1ZmMpatF05PJ",
+  "6eUKZXaKkcviH0Ku9w2n3V",
+  "3TVXtAsR1Inumwj472S9r4",
+  "66CXWjxzNUsdJxJ2JdwvnR",
+  "1uNFoZAHBGtllmzznpCI3s",
 ];
+
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://melodyhub-icod.onrender.com'
+  : '';
 
 const SpotifyArtistList = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,7 +29,7 @@ const SpotifyArtistList = () => {
 
   const fetchTopArtists = async () => {
     try {
-      const response = await axios.get(`/api/spotify/artists?ids=${TOP_ARTIST_IDS.join(',')}`);
+      const response = await axios.get(`https://melodyhub-icod.onrender.com/api/spotify/artists?ids=${TOP_ARTIST_IDS.join(',')}`);
       setTopArtists(response.data);
     } catch (err) {
       console.error('Failed to load top artists:', err);
@@ -36,7 +42,7 @@ const SpotifyArtistList = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`/api/spotify/search?query=${query}`);
+      const response = await axios.get(`https://melodyhub-icod.onrender.com/api/spotify/search?query=${query}`);
       setArtists(response.data);
     } catch (err) {
       console.error(err);
@@ -98,8 +104,10 @@ const SpotifyArtistList = () => {
           🔍 Search
         </button>
       </form>
+
       {loading && <p className="artist-message">Loading artists...</p>}
       {error && <p className="artist-message" style={{ color: 'red' }}>{error}</p>}
+
       <div className="artist-grid">
         {(artists.length > 0 ? artists : topArtists).map((artist) => (
           <div key={artist.id} className="artist-card">
