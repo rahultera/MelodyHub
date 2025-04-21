@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/register", { email, password, name });
+      await axios.post("https://melodyhub-icod.onrender.com/register", { email, password, name });
       alert("Registration successful!");
       navigate("/login");
     } catch (error) {
