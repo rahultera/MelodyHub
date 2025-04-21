@@ -9,7 +9,7 @@ const Comments = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/user/comments", { withCredentials: true })
+      .get("https://melodyhub-icod.onrender.com/user/comments", { withCredentials: true })
       .then((res) => {
         setComments(res.data);
       })
